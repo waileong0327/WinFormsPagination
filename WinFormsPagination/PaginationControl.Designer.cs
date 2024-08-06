@@ -42,7 +42,7 @@ namespace WinFormsPagination
             PanelPage = new Panel();
             NumericUpDownPage = new NumericUpDown();
             LabelPage = new Label();
-            ComboBoxRows = new ComboBox();
+            ComboBoxRowsPerPage = new ComboBox();
             LabelMaxPage = new Label();
             PanelPaginationControl.SuspendLayout();
             PanelPage.SuspendLayout();
@@ -146,7 +146,7 @@ namespace WinFormsPagination
             PanelPage.BackgroundImageLayout = ImageLayout.None;
             PanelPage.Controls.Add(NumericUpDownPage);
             PanelPage.Controls.Add(LabelPage);
-            PanelPage.Controls.Add(ComboBoxRows);
+            PanelPage.Controls.Add(ComboBoxRowsPerPage);
             PanelPage.Controls.Add(LabelMaxPage);
             PanelPage.Dock = DockStyle.Right;
             PanelPage.Location = new Point(1017, 0);
@@ -166,6 +166,7 @@ namespace WinFormsPagination
             NumericUpDownPage.TabIndex = 4;
             NumericUpDownPage.TabStop = false;
             NumericUpDownPage.TextAlign = HorizontalAlignment.Center;
+            NumericUpDownPage.ValueChanged += NumericUpDownPage_ValueChanged;
             // 
             // LabelPage
             // 
@@ -179,22 +180,23 @@ namespace WinFormsPagination
             LabelPage.Text = "Page";
             LabelPage.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // ComboBoxRows
+            // ComboBoxRowsPerPage
             // 
-            ComboBoxRows.DisplayMember = "10 / page";
-            ComboBoxRows.Dock = DockStyle.Left;
-            ComboBoxRows.DropDownStyle = ComboBoxStyle.DropDownList;
-            ComboBoxRows.FlatStyle = FlatStyle.Flat;
-            ComboBoxRows.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            ComboBoxRows.FormattingEnabled = true;
-            ComboBoxRows.Items.AddRange(new object[] { "10 / page", "20 / page", "30 / page", "40 / page", "50 / page" });
-            ComboBoxRows.Location = new Point(0, 0);
-            ComboBoxRows.Margin = new Padding(4, 0, 4, 0);
-            ComboBoxRows.Name = "ComboBoxRows";
-            ComboBoxRows.Size = new Size(130, 36);
-            ComboBoxRows.Sorted = true;
-            ComboBoxRows.TabIndex = 1;
-            ComboBoxRows.TabStop = false;
+            ComboBoxRowsPerPage.DisplayMember = "10 / page";
+            ComboBoxRowsPerPage.Dock = DockStyle.Left;
+            ComboBoxRowsPerPage.DropDownStyle = ComboBoxStyle.DropDownList;
+            ComboBoxRowsPerPage.FlatStyle = FlatStyle.Flat;
+            ComboBoxRowsPerPage.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            ComboBoxRowsPerPage.FormattingEnabled = true;
+            ComboBoxRowsPerPage.Items.AddRange(new object[] { "10 / page", "20 / page", "30 / page", "40 / page", "50 / page" });
+            ComboBoxRowsPerPage.Location = new Point(0, 0);
+            ComboBoxRowsPerPage.Margin = new Padding(4, 0, 4, 0);
+            ComboBoxRowsPerPage.Name = "ComboBoxRowsPerPage";
+            ComboBoxRowsPerPage.Size = new Size(130, 36);
+            ComboBoxRowsPerPage.Sorted = true;
+            ComboBoxRowsPerPage.TabIndex = 1;
+            ComboBoxRowsPerPage.TabStop = false;
+            ComboBoxRowsPerPage.SelectedIndexChanged += ComboBoxRowsPerPage_SelectedIndexChanged;
             // 
             // LabelMaxPage
             // 
@@ -229,7 +231,7 @@ namespace WinFormsPagination
         private Panel PanelFirstPage;
         private Panel PanelPage;
         private Label LabelMaxPage;
-        private ComboBox ComboBoxRows;
+        private ComboBox ComboBoxRowsPerPage;
         private NumericUpDown NumericUpDownPage;
         private Label LabelPage;
         private FlowLayoutPanel FlowLayoutPanelPage;
