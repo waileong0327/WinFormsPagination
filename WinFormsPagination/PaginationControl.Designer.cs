@@ -87,6 +87,9 @@ namespace WinFormsPagination
             PanelNextPage.Name = "PanelNextPage";
             PanelNextPage.Size = new Size(40, 40);
             PanelNextPage.TabIndex = 9;
+            PanelNextPage.Click += PanelNextPage_Click;
+            PanelNextPage.MouseLeave += Panel_MouseLeave;
+            PanelNextPage.MouseHover += Panel_MouseHover;
             // 
             // PanelRightSpace
             // 
@@ -108,6 +111,9 @@ namespace WinFormsPagination
             PanelPreviousPage.Name = "PanelPreviousPage";
             PanelPreviousPage.Size = new Size(40, 40);
             PanelPreviousPage.TabIndex = 7;
+            PanelPreviousPage.Click += PanelPreviousPage_Click;
+            PanelPreviousPage.MouseLeave += Panel_MouseLeave;
+            PanelPreviousPage.MouseHover += Panel_MouseHover;
             // 
             // PanelLeftSpace
             // 
@@ -129,6 +135,9 @@ namespace WinFormsPagination
             PanelLastPage.Name = "PanelLastPage";
             PanelLastPage.Size = new Size(40, 40);
             PanelLastPage.TabIndex = 2;
+            PanelLastPage.Click += PanelLastPage_Click;
+            PanelLastPage.MouseLeave += Panel_MouseLeave;
+            PanelLastPage.MouseHover += Panel_MouseHover;
             // 
             // PanelFirstPage
             // 
@@ -140,6 +149,9 @@ namespace WinFormsPagination
             PanelFirstPage.Name = "PanelFirstPage";
             PanelFirstPage.Size = new Size(40, 40);
             PanelFirstPage.TabIndex = 0;
+            PanelFirstPage.Click += PanelFirstPage_Click;
+            PanelFirstPage.MouseLeave += Panel_MouseLeave;
+            PanelFirstPage.MouseHover += Panel_MouseHover;
             // 
             // PanelPage
             // 
