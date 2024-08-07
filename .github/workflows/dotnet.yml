@@ -31,5 +31,5 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-artifact/merge@v4
         with:
-          pattern: net*-windows
+          path: bin/release/
           separate-directories: true
