@@ -12,10 +12,6 @@ jobs:
   build:
     runs-on: windows-latest
     
-    strategy:
-      matrix:
-        version: [5, 6, 7, 8]
-
     steps:
     - name: Checkout codes
       uses: actions/checkout@v4
@@ -34,5 +30,20 @@ jobs:
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: net${{ matrix.version }}.0-windows
-        path: WinFormsPagination/bin/Release/net${{ matrix.version }}.0-windows/*.*
+        name: net5.0-windows
+        path: WinFormsPagination/bin/Release/net5.0-windows/*.*
+        
+      uses: actions/upload-artifact@v4
+      with:
+        name: net6.0-windows
+        path: WinFormsPagination/bin/Release/net6.0-windows/*.*
+
+      uses: actions/upload-artifact@v4
+      with:
+        name: net7.0-windows
+        path: WinFormsPagination/bin/Release/net7.0-windows/*.*
+
+      uses: actions/upload-artifact@v4
+      with:
+        name: net8.0-windows
+        path: WinFormsPagination/bin/Release/net8.0-windows/*.*
