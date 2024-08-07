@@ -24,11 +24,12 @@ jobs:
     - name: Build
       run: dotnet build --no-restore --configuration Release
 
-  merge:
+  upload:
     runs-on: windows-latest
     needs: build
     steps:
-      - name: Merge Artifacts
+      - name: Upload Artifacts
         uses: actions/upload-artifact/merge@v4
         with:
+          pattern: net*-windows
           separate-directories: true
