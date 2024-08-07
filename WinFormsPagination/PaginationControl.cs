@@ -21,11 +21,11 @@ namespace WinFormsPagination
 
         #region properties
         Color _pageNumberDefaultBackColor = Color.Transparent;
-        Color _pageNumberHoverBackColor = Color.Transparent;
-        Color _pageNumberActiveBackColor = Color.Transparent;
+        Color _pageNumberHoverBackColor = Color.FromArgb(22, 120, 218);
+        Color _pageNumberActiveBackColor = Color.FromArgb(95, 173, 251);
         Color _pageNumberDefaultForeColor = Color.Black;
-        Color _pageNumberHoverForeColor = Color.Black;
-        Color _pageNumberActiveForeColor = Color.Black;
+        Color _pageNumberHoverForeColor = Color.White;
+        Color _pageNumberActiveForeColor = Color.White;
 
         Label? _activeLabel = null;
         int _pageToShow = 0;
@@ -111,6 +111,7 @@ namespace WinFormsPagination
                 return rows;
             }
         }
+
         /// <summary>
         /// TotalRows Property
         /// </summary>
