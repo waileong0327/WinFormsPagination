@@ -22,3 +22,13 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore --configuration Release
+    - name: Upload artifacts
+
+  merge:
+    runs-on: windows-latest
+    needs: upload
+    steps:
+      - name: Merge Artifacts
+        uses: actions/upload-artifact/merge@v4
+        with:
+          separate-directories: true
